@@ -4,16 +4,32 @@
         <title>Get Your Book</title>
     </head>
     <body>
-        <div id="telaDeCadastro">
-            <h2>Crie sua conta</h2>
-            <form name="f" method="post">
-                <input type="text" id="nome" size="20" maxlength="50">
-                <p><input type="email" id="email" maxlength="40"></p>
-                <p><input type="password" id="senha" maxlength="8"></p>
-                <p><input type="password" id="senhac" maxlength="8"></p>
+        <div class="box">
+            <div id="telaDeCadastro">
+                <h2>Crie sua conta</h2>
+                <div class="inputBox">
+                    <span>Nome de Usuário</span>
+                    <p><input type="text" id="nome" size="20" maxlength="50"></p>
+                </div>
+                <div class="inputBox">
+                    <span>E-mail</span>
+                    <p><input type="email" id="email" size="20" maxlength="50"></p>
+                    <i></i>
+                </div>
+                <div class="inputBox">
+                    <span>Senha</span>
+                    <p><input type="password" id="senha" maxlength="8"></p>
+                    <i></i>
+                </div>
+                <div>
+                    <span>Confirme sua senha</span>
+                    <p><input type="password" id="senhac" maxlength="8"></p>
+                </div>
+                
                 <p><input type="submit" id="Cadastrar" value="Crie sua conta"></p>
             </form>
             <img src="img/imgCad.png"/>     
+        </div>
         </div>
     </body>
 </html>
