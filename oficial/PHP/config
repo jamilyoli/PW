@@ -1,0 +1,9 @@
+<?php
+   $dbHost = 'Localhost';
+   $dbUsername = 'root';
+   $dbSenha = '';
+   $dbNome = 'cadastro';
+
+   $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+   
+?>
