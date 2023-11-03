@@ -29,11 +29,11 @@
                             <label for="senhac" name="senhac" id="senhac">Confirme sua senha</label>
                             <p><input type="password" name="senhac" id="senhac" maxlength="8"></p>
                         </div>
-                        <p><input type="submit" name="submit" id="submit" value="Crie sua conta"></p>
-                        <img src="img/imgCad.png"/>     
+                        <p><input type="submit" name="submit" id="submit" value="Crie sua conta"></p>      
                     </div>
                 </fieldset>
             </form>
         </div>
+        <img src="img/imgCad.png"/> 
     </body>
 </html>
