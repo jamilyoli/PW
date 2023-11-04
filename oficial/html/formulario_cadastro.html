@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Get Your Book</title>
+    </head>
+    <body>
+        <div class="box">
+            <form action="formulario_cadastro.php" method="POST">
+                <fieldset>
+                    <div id="telaDeCadastro">
+                        <h2>Crie sua conta</h2>
+                        <div class="inputBox">
+                            <label for="labelNome" name="labelNome" id="labelNome">Nome de Usuario</label>
+                            <p><input type="text" name="nome" id="nome" size="20" maxlength="50"></p>
+                        </div>
+                        <div class="inputBox">
+                            <label for="labelEmail" name="labelEmail" id="labelEmail">E-mail</label>
+                            <p><input type="email" name="email" id="email" size="20" maxlength="50"></p>
+                            <i></i>
+                        </div>
+                        <div class="inputBox">
+                            <label for="labelSenha" name="labelSenha" id="labelSenha">Senha</label>
+                            <p><input type="password" name="senha" id="senha" maxlength="8"></p>
+                            <i></i>
+                        </div>
+                        <div class="inputBox">
+                            <label for="senhac" name="senhac" id="senhac">Confirme sua senha</label>
+                            <p><input type="password" name="senhac" id="senhac" maxlength="8"></p>
+                        </div>
+                        <p><input type="submit" name="submit" id="submit" value="Crie sua conta"></p>                             
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <img src="img/imgCad.png"/>
+    </body>
+</html>
