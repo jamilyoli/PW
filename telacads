@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/styles.css">
+        <title>Get Your Book</title>
+    </head>
+    <body>
+        <div class="box">
+            <h2>Crie sua conta</h2>
+            <form action="formulario_cadastro.php" method="POST">
+                        <div class="inputBox"> <br>
+                            <label for="labelNome" name="labelNome" id="labelNome">Digite seu nome completo</label>
+                            <p><input type="text" name="nome" id="nome" size="20" maxlength="50"></p>
+                        </div>
+                        <div class="inputBox"> <br>
+                            <label for="labelEmail" name="labelEmail" id="labelEmail">Digite seu endereço de e-mail</label>
+                            <p><input type="email" name="email" id="email" size="20" maxlength="50"></p>
+                            <i></i> <br>
+                        </div>
+                        <div class="inputBox"> 
+                            <label for="labelSenha" name="labelSenha" id="labelSenha">Digite sua senha</label>
+                            <p><input type="password" name="senha" id="senha" maxlength="8"></p><br>
+                            <i></i>
+                        </div>
+                        <div class="inputBox">
+                            <label for="senhac" name="senhac" id="senhac">Confirme sua senha</label>
+                            <p><input type="password" name="senhac" id="senhac" maxlength="8"></p> <br>
+                        </div>
+                        <p>
+                            <input button
+                            type="submit" name="submit" id="submit" value="Crie sua conta"></p> 
+                    </div>
+            </form>
+            <div class="opa"></div>
+            <div class="pao">
+
+            </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+css:
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+html,body{
+  height: 100%;
+}
+
+.opa{
+  width: 100% ;
+  height: 150%;
+  background-color: rgb(255,192,203);
+}
+
+.pao {
+  width: 700px;
+  height: 700px;
+  margin-top: -900px;
+  margin-left: 600px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../img/imgCad.png);
+  opacity: 0.5;
+}
+
+.box{
+  position: absolute;
+  top: 400px;
+  left: 350px;
+  margin-right: 100px;
+  height: 600px;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  padding: 100px;
+  background-color: #FDF5E6;
+  box-sizing: border-box;
+  box-shadow: #ffe4e1;
+  border-radius: 30px;
+}
+
+.box h2{
+  top: 50px;
+  margin: 0 0 30px;
+  padding: 0;
+  color: #4B1B0D;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 40px;
+  text-align:center
+}
+
+.box input{
+  width: 300px;
+  outline: unset;
+  font-size: 16px;
+  background-color: #FFC0CB;
+  border: 2px solid #F3A9B2;
+  padding: 3px;
+  margin: 1px;
+  border-radius: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.box label{
+  font-weight: bold;
+  font-size: 20px;
+  color: #4B1B0D;
+
+}
