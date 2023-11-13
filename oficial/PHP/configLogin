@@ -19,7 +19,7 @@
         {
             $_SESSION['email'] = $email;
             $_SESSION['senha'] = $senha;
-            //header('Location: minhaReview.php')
+            header('Location: lista_review.php');
         }
     }
     else{
