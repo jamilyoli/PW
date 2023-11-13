@@ -1,16 +1,30 @@
 <?php
+include "conexaoReview.php";
+
 if (isset($_GET['id'])) {
     $imageId = $_GET['id'];
-    include('conexaoReview.php');
-    $sql = "DELETE FROM tbl_upload WHERE id = $imageId";
-    
-    if (mysqli_query($conexaor, $sql)) {
-        echo "Informações excluídas com sucesso.";
+
+    $query = "SELECT image FROM tbl_upload WHERE id = $imageId";
+    $result = mysqli_query($conexaor, $query);
+
+    if ($result && $row = mysqli_fetch_assoc($result)) {
+        $imagemEntrada = $row['imagemEntrada'];
+
+        $deleteQuery = "DELETE FROM tbl_upload WHERE id = $imageId";
+        $deleteResult = mysqli_query($conexaor, $deleteQuery);
+
+        if ($deleteResult) {
+            if (unlink("file/" . $imagemEntrada)) {
+                echo "Imagem excluída com sucesso.";
+            } else {
+                echo "Erro ao excluir o arquivo físico.";
+            }
+        } else {
+            echo "Erro ao excluir a imagem do banco de dados.";
+        }
     } else {
-        echo "Erro ao excluir informações: " . mysqli_error($conexaor);
+        echo "Imagem não encontrada.";
     }
-    mysqli_close($conexaor);
-} else {
-    echo 'ID não especificado.';
+    header('Location: lista_review.php');
 }
 ?>
