@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/TelaReviews.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+        <title>Get Your Book</title>
+    </head>
+    <body>
+        <div class="container-wrapper">
+            <div class="container">
+                <div class="input-wrapper">
+                    <input placeholder="Pesquisar...">
+                    <i class="fa fa-search"></i>
+                    </div>
+                </div>
+        <header>
+            <nav id="menu-h">
+                <ul>
+                    <li><a href="lista_review.php">Minhas Reviews</a></li>
+                    <li><a href="#">Sobre nós</a></li>
+                </ul>
+            </div>
+        </header>
+        <main>
+            <section>
+                <div class="box">
+                    <div id="telaDeReview">
+                        <a href="formulario_review.html" class="button">Adicionar</a>
+                        <a href="excluir.php?id=<?php echo $row['id']; ?>" class="button">Excluir</a>
+
+                        <?php
+                            include "conexaoReview.php";
+                            $data = mysqli_query($conexaor, "SELECT * FROM tbl_upload order by id DESC") ;
+                            while ($row = mysqli_fetch_array($data)){
+                        ?>
+                        <div class="img">
+                            <div class="imgUpload">
+                            <a href="detalhes.php?id=<?php echo $row['id']; ?>"> 
+                                <img src="file/<?php echo $row['imagemEntrada']; ?>" width = '125' height = '125'>
+                            </a>
+                            </div>
+                        </div>
+                        <div class="inputBox">
+                            <label for="labelTitulo" name="labelTitulo" id="labelTitulo"><?php echo $row['titulo'] ; ?></label>
+                        </div>
+                        <div class="inputBox">
+                            <label for="labelAvaliacao" name="labelAvaliacao" id="labelAvaliacao"><?php echo $row['avaliacao'] ; ?></label>
+                        </div>
+                        <?php } ?>    
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
+
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #F4E8E8;
+}
+
+#menu-h ul {
+    list-style: none;
+}
+
+#menu-h ul li {
+    display: inline;
+}
+
+#menu-h ul li a{
+    color: #B58B8B;
+    padding: 20px;
+    display: inline-block;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+#menu-h ul li a:hover {
+    color: #4B1B0D;
+}
+
+#menu-h ul li a::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    border-radius: 10%;
+    background: #4B1B0D;
+    transition: all 0.3s ease;
+}
+
+#menu-h ul li a:hover::after {
+    width: 90%;
+}
+
+.input-wrapper{
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -290px;
+    margin-left: 350px;
+    padding: 8px 12px;
+    gap: 6px;
+    background-color: #F6CBCB;
+    border-radius: 16px;
+}
+
+.input-wrapper i{
+    color: #4B1B0D;
+    cursor: pointer;
+}
+
+.input-wrapper input{
+    background-color: transparent;
+    border: none;
+    color: #4B1B0D;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.input-wrapper input:focus-visible {
+    outline: none;
+}
+
+#telaDeReview a .button{
+   width: 30px; 
+   height: 40px;
+}
