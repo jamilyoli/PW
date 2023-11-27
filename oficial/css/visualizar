@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Get Your Book</title>
+    </head>
+    <style>
+        .barra-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F3A9B2;
+    color: #fff;
+    padding: 10px;
+}
+header{
+    box-shadow: none; 
+}
+.esquerda{
+    margin-right: 10px;
+    margin-left: 20px;
+    
+}
+.sobre {
+    margin-right: 700px;
+}
+
+.direita {
+    padding: 8px;
+    margin-right: 10px;
+    margin-left: 40px;
+}
+.direita input{
+    padding: 8px;
+    border: none; /* Remove a borda */
+    border-radius: 10px;
+}
+.esquerda a:hover, .sobre a:hover {
+    color:#4B1B0D; 
+    font-size: 18px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+a {
+    color: #ffffff;
+}   
+
+a:visited {
+    color: #F3A9B2;
+}
+
+}
+.direita button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: none;
+}
+
+    </style>
+    <body>
+        <header>
+            <div class="barra-superior">
+                <div class="esquerda">
+                    <a href="">Review</a>
+                </div>
+        
+                <div class="sobre">
+                    <a href="">Sobre Nós</a>
+                </div>
+        
+                <div class="direita">
+                    <div class="pesquisa">
+                        <input type="text" placeholder="Pesquisar...">
+                        <button type="submit">Buscar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="conteudo-principal">
+        </header>
+        <main>
+            <section>
+                <div class="box">
+                    <form action="formulario_review.php" method="POST" enctype="multipart/form-data">
+                        <fieldset>
+                            <div id="telaDeReview">
+                                <h2>Sabemos que ama livros!Adicione a review sobre um livro</h2>
+                                <div class="inputBox">
+                                    <label for="labelTitulo" name="labelTitulo" id="labelNome">Titulo</label>
+                                    <p><input type="text" name="nome" id="nome" size="20" maxlength="50"></p>
+                                </div>
+                                <div class="btnUpload">
+                                    <button id="abrirTela">Upload da Imagem</button>
+                                    <div id="imagemUploadTela" class="tela">
+                                        <div class="tela-container">
+                                            <label>Faça upload da imagem do livro</h3>
+                                            <input type="file" name="imagemEntrada">
+                                            <button id="uploadBtn">Upload</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inputBox">
+                                    <label for="labelAutor" name="labelAutor" id="labelAutor">Autor</label>
+                                    <p><input type="text" name="autor" id="autor" size="20" maxlength="50"></p>
+                                    <i></i>
+                                </div>
+                                <div class="inputBox">
+                                    <label for="labelPagina" name="labelPaginas" id="labelPaginas">Número de Páginas</label>
+                                    <p><input type="text" name="nPaginas" id="nPaginas" maxlength="4"></p>
+                                    <i></i>
+                                </div>
+                                <div class="avaliacao">
+                                    <label for="labelAvalia" name="labelAvalia" id="labelAvalia">Avaliação</label>
+                                    <input type="radio" name="avaliacao" value="1" id="estrela1"><label for="estrela1">1</label>
+                                    <input type="radio" name="avaliacao" value="2" id="estrela2"><label for="estrela2">2</label>
+                                    <input type="radio" name="avaliacao" value="3" id="estrela3"><label for="estrela3">3</label>
+                                    <input type="radio" name="avaliacao" value="4" id="estrela4"><label for="estrela4">4</label>
+                                    <input type="radio" name="avaliacao" value="5" id="estrela5"><label for="estrela5">5</label>
+                                </div>
+                                <div class="inputBox">
+                                    <button id="abrirTelaDes">Adicione uma descrição</button>
+                                    <div id="descriTela" class="tela">
+                                        <div class="telad-container">
+                                            <h3>Escreva a review sobre o livro:</h3>
+                                            <textarea id="descEntrada" name="descEntrada"></textarea>
+                                            <button id="adiciBtn">Adicionar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="inputBox">
+                                    <label for="labelRecome" name="labelRecomen" id="labelRecomen">Eu recomendo?</label>
+                                    <ul class="recomen">
+                                        <li class="boll-icon ativo" data-avaliacao="1">Sim</li>
+                                        <li class="boll-icon" data-avaliacao="2">Não</li>
+                                    </ul>
+                                </div>
+                                <p><input type="submit" name="submit" id="submit" value="Adicionar"></p>
+                                <p><button id="cancel" name="cancel">Cancelar</button></p>   
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </section>
+            <img src="img/_a1bbcdd3-674f-4ab8-9c8a-33ddd7d7755a.jfif">
+        </main>
+    </body>
+</html>
